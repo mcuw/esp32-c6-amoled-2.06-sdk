@@ -1,4 +1,4 @@
-# ESP32-C6 AMOLED 2.06inch library project
+# ESP32-C6 AMOLED 2.06inch library
 
 ## Description
 
