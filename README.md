@@ -1,8 +1,8 @@
-# ESP32 project template
+# ESP32-C6 AMOLED 2.06inch library project
 
 ## Description
 
-This is a project is a demo for the ESP32-C6 AMOLED 2.06inch touch watch from waveshare.
+This is a library for the ESP32-C6 AMOLED 2.06inch touch watch from waveshare.
 
 ## Features 
 
