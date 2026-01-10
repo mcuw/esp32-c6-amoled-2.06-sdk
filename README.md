@@ -89,28 +89,11 @@ Update the [CHANGELOG.md](CHANGELOG.md) file before you are creating a new relea
 
 ## Supported boards
 
-Buy on AliExpress (affiliate links) ...
-
-- ESP32
-  - [LILYGO T-Beam](https://s.click.aliexpress.com/e/_DBzslDV) with LoRA
-  - lolin32
-  - lolin D32 pro
-- ESP32 S2
-- ESP32 S3
-  - [LILYGO T-Display S3](https://s.click.aliexpress.com/e/_DBmOMkn)
-  - [LILYGO T-Display-S3 AMOLED](https://s.click.aliexpress.com/e/_DmboYpZ)
-  - [LILYGO T-Display-S3 Touch](https://s.click.aliexpress.com/e/_DCBgPlV)
-  - [LILYGO T-Display S3 Long](https://s.click.aliexpress.com/e/_Dl6UVMx)
-  - [LilyGo T-Watch S3](https://s.click.aliexpress.com/e/_DEZVvH1)
-  - [LilyGo T-CameraPlus ESP32-S3](https://s.click.aliexpress.com/e/_DkytBeT)
-  - [LilyGo T-RGB](https://s.click.aliexpress.com/e/_Dem6i0b)
-  - [LilyGo T-Deck](https://s.click.aliexpress.com/e/_DBPnZmL)
-  - [LilyGo T-Deck Plus](https://s.click.aliexpress.com/e/_DDeskaP)
+If you want to support this project, you can use these affiliate links ...
 
 - ESP32 C6 with WiFi 6 and BT-5 LE
-  - [NanoESP32-C6](https://s.click.aliexpress.com/e/_ooBtUih) with 16MB flash
-  - [ESP32-C6](https://s.click.aliexpress.com/e/_DeLjVMb) with 4MB flash and W2812 RGB LED
-  - [LILYGO T-QT C6](https://github.com/mcuw/esp32-t-qt-c6-sdk) with 4 MB flash, touch display, 6-Axis Sensor
+  - [ESP32-C6 AMOLED 2.06inch Touch Watch (aliexpress affiliate link)](https://s.click.aliexpress.com/e/_c4madtnD) with 16MB flash
+  - [ESP32-S3 AMOLED 2.06inch Touch Watch (aliexpress affiliate link)](https://s.click.aliexpress.com/e/_c4madtnD) with 32MB flash
 
 ## Disclaimer
 
