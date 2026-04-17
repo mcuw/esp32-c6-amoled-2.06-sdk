@@ -16,7 +16,7 @@ Quick kickstart a Watch project with a SDK
 
 - [x] ESP32-C6 RISC-V 32-bit processor, up to 160 MHz frequency, 512KB HP SRAM, 16KB LP SRAM, 320KB ROM, and 16MB Flash memory
 - [x] Serialport
-- [ ] GFX support
+- [x] GFX support
 - [ ] OTA over WiFi
 - [ ] OTA with auto update
 - [ ] AXP2101 PMU power management
@@ -29,6 +29,7 @@ Quick kickstart a Watch project with a SDK
 - [ ] Audio Playback
 - [ ] Dual MIC Array Audio Recording
 - [ ] Thread/ Matter with IEEE 802.15.4 wireless infrastructureless communication
+- [ ] publish library
 
 ## Hardware Description
 
