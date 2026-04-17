@@ -1,4 +1,4 @@
-# ESP32-C6 AMOLED 2.06" ålibrary
+# ESP32-C6 AMOLED 2.06" library
 
 ## Description
 
