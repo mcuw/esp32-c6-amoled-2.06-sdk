@@ -36,7 +36,7 @@
 
 #define BUTTON_PWR 18
 #define BUTTON_BOOT 9
-// #define BUTTON_ACTIVEHIGH 0
+#define BUTTON_ACTIVELOW true
 // #define BUTTON_PULLUP 1
 
 // AMOLED 2.06" LCD pins
