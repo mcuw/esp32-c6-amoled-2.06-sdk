@@ -14,6 +14,10 @@ https://www.waveshare.com/product/arduino/boards-kits/esp32-c6/esp32-c6-touch-am
 
 Quick kickstart a Watch project with a SDK
 
+
+## Roadmap
+
+System
 - [x] ESP32-C6 RISC-V 32-bit processor, up to 160 MHz frequency, 512KB HP SRAM, 16KB LP SRAM, 320KB ROM, and 16MB Flash memory
 - [x] Serialport
 - [x] GFX support
@@ -21,19 +25,26 @@ Quick kickstart a Watch project with a SDK
 - [x] RTOS task
 - [x] OTA upload over WiFi AP
 - [ ] OTA with auto update
-- [ ] low energy consumption
-- [ ] AXP2101 PMU power management
 - [ ] AMOLED 2.06", 410x502px resolution, 600 cd/㎡, CO5300 Display Driver with LVGL
+- [ ] AXP2101 PMU power management
 - [ ] FT3168 capacitive touch chip
+
+Energy management
 - [ ] WiFi 6 iTWT - omnipresent
-- [ ] Watch - RTC PCF85063 chip sync with NTP
 - [ ] BT 5 LE - connect to smartphone
-- [ ] QMI8658 6-Axis IMU (3-axis accelerometer and 3-axis gyroscope)
+- [ ] low energy consumption
+
+Sensor and actors
+- [ ] Watch - RTC PCF85063 chip sync with NTP
 - [ ] Audio Playback
 - [ ] Dual MIC Array Audio Recording
+- [ ] QMI8658 6-Axis IMU (3-axis accelerometer and 3-axis gyroscope)
+
+Connectivity
 - [ ] Thread/ Matter with IEEE 802.15.4 wireless infrastructureless communication
-- [ ] publish library
 - [ ] EspNow
+
+- [ ] publish library
 
 ## Hardware Description
 
