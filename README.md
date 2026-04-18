@@ -18,7 +18,8 @@ Quick kickstart a Watch project with a SDK
 - [x] Serialport
 - [x] GFX support
 - [x] Button - click, double click, long pressed
-- [ ] OTA over WiFi
+- [x] RTOS task
+- [x] OTA upload over WiFi AP
 - [ ] OTA with auto update
 - [ ] low energy consumption
 - [ ] AXP2101 PMU power management

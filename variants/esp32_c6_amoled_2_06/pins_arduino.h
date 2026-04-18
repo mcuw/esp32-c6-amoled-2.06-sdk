@@ -61,42 +61,4 @@
 #define SPIQ MISO
 #define SPICLK SCK
 
-// #define USB_TX 12
-// #define USB_RX 13
-
-
-// #define TX 1
-// #define RX 3
-
-// #define PMU_IRQ 35 // Battery ADC
-// #define PMU_WIRE_PORT Wire
-
-// #define HAS_DISPLAY //Optional, bring your own board, no LCD !!
-// #define DISPLAY_MODEL_SSD_LIB       SSD1306Wire
-// #define DISPLAY_MODEL               U8G2_SSD1306_128X64_NONAME_F_HW_I2C
-
-// static const uint8_t A0 = 36;
-// static const uint8_t A3 = 39;
-// static const uint8_t A4 = 32;
-// static const uint8_t A5 = 33;
-// static const uint8_t A6 = 34;
-// static const uint8_t A7 = 35;
-
-// static const uint8_t A10 = 4;
-// static const uint8_t A11 = 0;
-// static const uint8_t A12 = 2;
-// static const uint8_t A14 = 13;
-// static const uint8_t A16 = 14;
-// static const uint8_t A18 = 25;
-
-// static const uint8_t T0 = 4;
-// static const uint8_t T1 = 0;
-// static const uint8_t T2 = 2;
-// static const uint8_t T4 = 13;
-// static const uint8_t T6 = 14;
-// static const uint8_t T8 = 33;
-// static const uint8_t T9 = 32;
-
-// static const uint8_t DAC1 = 25;
-
 #endif /* Pins_Arduino_h */
