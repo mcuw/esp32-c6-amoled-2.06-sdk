@@ -1,5 +1,6 @@
 /**
  * Reference app with OTA with GitHub and Wi-Fi connectivity for ESP32-C6 AMOLED 2.06" SDK
+ * source code and credits to https://github.com/ittipu/IoT_Bhai_Youtube_Channel/blob/main/Mastering%20ESP32(English)/1.%20ESP32%20OTA%20Firmware%20Update%20from%20GitHub%20%20Step-by-Step/firmware/firmware.ino
  *
  * This example demonstrates how to set up an over-the-air (OTA) update service on the ESP32-C6 AMOLED 2.06" using both GitHub and Wi-Fi connectivity.
  * It allows you to upload new firmware versions wirelessly, making it easier to maintain and update your device without needing a physical connection.
@@ -74,7 +75,7 @@ bool startOTAUpdate(WiFiClient* client, int contentLength) {
   int lastProgress = 0;
 
   // Timeout variables
-  const unsigned long timeoutDuration = 120*1000;  // 10 seconds timeout
+  const unsigned long timeoutDuration = 120*1000;  // 120 seconds timeout
   unsigned long lastDataTime = millis();
 
   while (written < contentLength) {
@@ -119,10 +120,14 @@ bool startOTAUpdate(WiFiClient* client, int contentLength) {
   return true;
 }
 
-void downloadAndApplyFirmware() {
+void downloadAndApplyFirmware(const String& latestVersion) {
   HTTPClient http;
   http.setFollowRedirects(HTTPC_STRICT_FOLLOW_REDIRECTS);
-  http.begin(FIRMWARE_URL);
+
+  char url[256];
+  snprintf(url, sizeof(url), FIRMWARE_URL, latestVersion.c_str(), latestVersion.c_str());
+  USBSerial.printf("URL: %s\n", url);
+  http.begin(url);
 
   int httpCode = http.GET();
   USBSerial.printf("HTTP GET code: %d\n", httpCode);
@@ -192,7 +197,7 @@ void checkForFirmwareUpdate() {
     gfx->setCursor(16, gfx->getCursorY());
     gfx->println("Starting OTA update...");
 
-    downloadAndApplyFirmware();
+    downloadAndApplyFirmware(latestVersion);
   } else {
     USBSerial.println("Device is up to date.");
     gfx->setCursor(16, gfx->getCursorY());
@@ -237,11 +242,8 @@ void setup()
   {
     USBSerial.println("gfx->begin() failed!");
   }
-  // gfx->fillScreen(0xFFFF);   // WHITE
   gfx->fillScreen(0x0000);   // BLACK
   gfx->setTextColor(0x001F); // BLUE in 565 RGB format
-
-  gfx->setTextSize(2);
 
   // center the text
   gfx->setTextSize(4);
@@ -253,6 +255,8 @@ void setup()
   gfx->setCursor((gfx->width() - w) / 2, (gfx->height() - h) / 2);
   gfx->println(FIRMWARE_VERSION);
   gfx->setTextSize(3);
+
+  gfx->setTextColor(0xFFFF); // WHITE in 565 RGB format
 
   // initialize button feature
   bootButton.attachClick(click);
@@ -292,7 +296,7 @@ void setup()
   xTaskCreatePinnedToCore(
     otaTask,             // Function name of the task
     "OTA task",          // Name of the task (e.g. for debugging)
-    4 * 1024,            // Stack size (bytes)
+    8 * 1024,            // Stack size (bytes)
     NULL,                // Parameter to pass
     0,                   // Task priority
     NULL,                // Assign task handle
