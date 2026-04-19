@@ -17,7 +17,7 @@
  *  so ensure that the AP_PSK in credentials.h matches the --auth parameter in upload_flags of extra_configs/upload_config.ini.
  */
 #include <Arduino.h>
-#include "Arduino_GFX_Library.h"
+#include <Arduino_GFX_Library.h>
 #include <OTA.h>
 #include "credentials.h" // use credentials_template.h as a template for credentials
 

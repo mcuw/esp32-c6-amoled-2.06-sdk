@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "Arduino_GFX_Library.h"
+#include <Arduino_GFX_Library.h>
 
 HWCDC USBSerial;
 

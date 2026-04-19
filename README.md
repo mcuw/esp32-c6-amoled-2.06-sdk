@@ -28,6 +28,7 @@ System
 - [ ] AMOLED 2.06", 410x502px resolution, 600 cd/㎡, CO5300 Display Driver with LVGL
 - [ ] AXP2101 PMU power management
 - [ ] FT3168 capacitive touch chip
+- [ ] preferences/ NVS
 
 Energy management
 - [ ] WiFi 6 iTWT - omnipresent

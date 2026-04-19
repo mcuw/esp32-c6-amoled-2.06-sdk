@@ -9,35 +9,34 @@ OneButton bootButton(BUTTON_BOOT, BUTTON_ACTIVELOW);
 
 int counter = 0;
 
-// This function will be called when the button1 was pressed 1 time (and no 2. button press followed).
+// This function will be called when the button was pressed 1 time (and no 2. button press followed).
 void click() {
   USBSerial.print("Button clicked: ");
   USBSerial.println(++counter);
-}  // click1
+}
 
 
-// This function will be called when the button1 was pressed 2 times in a short timeframe.
+// This function will be called when the button was pressed 2 times in a short timeframe.
 void doubleclick() {
   USBSerial.println("Button doubleclick.");
-}  // doubleclick
+}
 
 
-// This function will be called once, when the button1 is pressed for a long time.
+// This function will be called once, when the button is pressed for a long time.
 void longPressStart() {
   USBSerial.println("Button longPress start");
-}  // longPressStart
+}
 
-
-// This function will be called often, while the button1 is pressed for a long time.
+// This function will be called often, while the button is pressed for a long time.
 void longPress() {
   USBSerial.println("Button longPress...");
-}  // longPress
+}
 
 
-// This function will be called once, when the button1 is released after beeing pressed for a long time.
+// This function will be called once, when the button is released after being pressed for a long time.
 void longPressStop() {
   USBSerial.println("Button longPress stop");
-}  // longPressStop
+}
 
 
 void setup() {
