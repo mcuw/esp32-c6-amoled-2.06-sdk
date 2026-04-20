@@ -20,17 +20,6 @@ jobs:
         with:
           architecture: "x64"
           python-version: "3.x"
-      - name: Set version from tag
-        run: echo "${{ github.ref_name }}" > version.txt
-      - name: Commit and push version.txt
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add version.txt
-          git commit -m "Set version.txt to ${{ github.ref_name }}" || echo "No changes to commit"
-          git push origin HEAD:main || echo "No push needed"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
       # https://docs.platformio.org/en/latest/core/history.html
       - name: Install PlatformIO core
         run: pip install --upgrade platformio
@@ -64,3 +53,14 @@ jobs:
         with:
           artifacts: "firmware/*/firmware_*.bin"
           bodyFile: "CHANGELOG.md"
+      - name: Set version from tag
+        run: echo "${{ github.ref_name }}" > version.txt
+      - name: Commit and push version.txt
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add version.txt
+          git commit -m "Set version.txt to ${{ github.ref_name }}" || echo "No changes to commit"
+          git push origin HEAD:main || echo "No push needed"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
