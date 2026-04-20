@@ -18,7 +18,8 @@
 #include <HTTPClient.h>
 #include <Update.h>
 
-#define FIRMWARE_VERSION "0.1.0"
+// bump also ./version.txt when changing the version
+#define FIRMWARE_VERSION "0.1.1"
 #define VERSION_URL "https://raw.githubusercontent.com/mcuw/esp32-c6-amoled-2.06-sdk/refs/heads/main/version.txt"
 #define FIRMWARE_URL "https://github.com/mcuw/esp32-c6-amoled-2.06-sdk/releases/download/v%s/firmware_esp32_c6_amoled_2_06_v%s.bin"
 
