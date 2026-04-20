@@ -44,8 +44,10 @@ Sensor and actors
 Connectivity
 - [ ] Thread/ Matter with IEEE 802.15.4 wireless infrastructureless communication
 - [ ] EspNow
+- [ ] Webserver example: WiFi Manager 2 with Captive portal, Astro, Qwik
 
-- [ ] publish library
+Release SDK
+- [ ] publish to Arduino registry
 
 ## Hardware Description
 
