@@ -8,12 +8,12 @@ https://www.waveshare.com/product/arduino/boards-kits/esp32-c6/esp32-c6-touch-am
 
 ## Prerequisites
 
-- Uses Platformio/ pioarduino
+- Uses pioarduino vscode extension
 
 ## Features 
 
-Quick kickstart a Watch project with a SDK
-
+- Quick kickstart a Watch project with a SDK
+- examples
 
 ## Roadmap
 
@@ -32,8 +32,7 @@ System
 
 Energy management
 - [ ] WiFi 6 iTWT - omnipresent
-- [ ] BT 5 LE - connect to smartphone
-- [ ] low energy consumption
+- [ ] low energy consumption - lifght sleep
 
 Sensor and actors
 - [ ] Watch - RTC PCF85063 chip sync with NTP
@@ -44,6 +43,7 @@ Sensor and actors
 Connectivity
 - [ ] Thread/ Matter with IEEE 802.15.4 wireless infrastructureless communication
 - [ ] EspNow
+- [ ] BT 5 LE - connect to smartphone
 - [ ] Webserver example: WiFi Manager 2 with Captive portal, Astro, Qwik
 
 Release SDK
