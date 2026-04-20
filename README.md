@@ -24,8 +24,8 @@ System
 - [x] Button - click, double click, long pressed
 - [x] RTOS task
 - [x] OTA upload over WiFi AP
-- [ ] OTA with auto update
-- [ ] AMOLED 2.06", 410x502px resolution, 600 cd/㎡, CO5300 Display Driver with LVGL
+- [x] OTA update with GitHub w/o cable and device is in production
+- [ ] LVGL support for AMOLED 2.06", 410x502px resolution, 600 cd/㎡, CO5300 Display Driver
 - [ ] AXP2101 PMU power management
 - [ ] FT3168 capacitive touch chip
 - [ ] preferences/ NVS
@@ -61,6 +61,10 @@ If you want to support this project, you can use these affiliate links ...
 
 - ESP32 C6 with WiFi 6 and BT-5 LE
   - [ESP32-C6 AMOLED 2.06inch Touch Watch (aliexpress affiliate link)](https://s.click.aliexpress.com/e/_c4madtnD) with 16MB flash
+
+## Github action / CI
+
+- ensure that "Read and write permissions" option is activated under the Settings/ General/ Actions/ General - Workflow permissions (required for OTA update)
 
 ## Disclaimer
 
