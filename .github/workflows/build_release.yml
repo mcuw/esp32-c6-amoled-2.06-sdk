@@ -21,8 +21,7 @@ jobs:
           architecture: "x64"
           python-version: "3.x"
       - name: Set version from tag
-        id: set_version
-        run: echo "version=${{ github.ref_name }}" >> version.txt
+        run: echo "${{ github.ref_name }}" > version.txt
       - name: Commit and push version.txt
         run: |
           git config --global user.name "github-actions[bot]"

@@ -19,9 +19,9 @@
 #include <Update.h>
 
 // The CI will bump the version in  ./version.txt when creating a new tag, e.g. v1.0.0
-#define FIRMWARE_VERSION "0.1.2"
+#define FIRMWARE_VERSION "v0.1.3"
 #define VERSION_URL "https://raw.githubusercontent.com/mcuw/esp32-c6-amoled-2.06-sdk/refs/heads/main/version.txt"
-#define FIRMWARE_URL "https://github.com/mcuw/esp32-c6-amoled-2.06-sdk/releases/download/v%s/firmware_esp32_c6_amoled_2_06_v%s.bin"
+#define FIRMWARE_URL "https://github.com/mcuw/esp32-c6-amoled-2.06-sdk/releases/download/%s/firmware_esp32_c6_amoled_2_06_%s.bin"
 
 #define MARGIN_LEFT 0
 
