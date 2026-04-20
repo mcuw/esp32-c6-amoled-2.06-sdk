@@ -23,6 +23,8 @@
 #define VERSION_URL "https://raw.githubusercontent.com/mcuw/esp32-c6-amoled-2.06-sdk/refs/heads/main/version.txt"
 #define FIRMWARE_URL "https://github.com/mcuw/esp32-c6-amoled-2.06-sdk/releases/download/v%s/firmware_esp32_c6_amoled_2_06_v%s.bin"
 
+#define MARGIN_LEFT 0
+
 HWCDC USBSerial;
 volatile bool updateInProgress = false;
 
@@ -141,23 +143,23 @@ void downloadAndApplyFirmware(const String& latestVersion) {
       WiFiClient* stream = http.getStreamPtr();
       if (startOTAUpdate(stream, contentLength)) {
         USBSerial.println("OTA update successful, restarting...");
-        gfx->setCursor(16, gfx->getCursorY());
+        gfx->setCursor(MARGIN_LEFT, gfx->getCursorY());
         gfx->println("Update successful, restarting...");
         delay(2000);
         ESP.restart();
       } else {
         USBSerial.println("OTA update failed");
-        gfx->setCursor(16, gfx->getCursorY());
+        gfx->setCursor(MARGIN_LEFT, gfx->getCursorY());
         gfx->println("Update failed");
       }
     } else {
       USBSerial.println("Invalid firmware size");
-      gfx->setCursor(16, gfx->getCursorY());
+      gfx->setCursor(MARGIN_LEFT, gfx->getCursorY());
       gfx->println("Invalid firmware size");
     }
   } else {
     USBSerial.printf("Failed to fetch firmware. HTTP code: %d\n", httpCode);
-    gfx->setCursor(16, gfx->getCursorY());
+    gfx->setCursor(MARGIN_LEFT, gfx->getCursorY());
     gfx->printf("Failed to fetch firmware. HTTP code: %d\n", httpCode);
   }
   http.end();
@@ -166,12 +168,12 @@ void downloadAndApplyFirmware(const String& latestVersion) {
 
 void checkForFirmwareUpdate() {
   USBSerial.println("Checking for firmware update...");
-  gfx->setCursor(16, gfx->getCursorY());
+  gfx->setCursor(MARGIN_LEFT, gfx->getCursorY());
   gfx->println("Check updates...");
 
   if (WiFi.status() != WL_CONNECTED) {
     USBSerial.println("WiFi not connected");
-    gfx->setCursor(16, gfx->getCursorY());
+    gfx->setCursor(MARGIN_LEFT, gfx->getCursorY());
     gfx->println("WiFi not connected");
     return;
   }
@@ -180,14 +182,14 @@ void checkForFirmwareUpdate() {
   String latestVersion = fetchLatestVersion();
   if (latestVersion == "") {
     USBSerial.println("Failed to fetch latest version");
-    gfx->setCursor(16, gfx->getCursorY());
+    gfx->setCursor(MARGIN_LEFT, gfx->getCursorY());
     gfx->println("Failed to fetch latest version");
     return;
   }
 
   USBSerial.println("Current Version: " + String(FIRMWARE_VERSION));
   USBSerial.println("Latest Version: " + latestVersion);
-  gfx->setCursor(16, gfx->getCursorY());
+  gfx->setCursor(MARGIN_LEFT, gfx->getCursorY());
   gfx->print("Latest Version: ");
   gfx->println(latestVersion);
 
@@ -195,13 +197,13 @@ void checkForFirmwareUpdate() {
   // Step 2: Compare versions
   if (latestVersion != FIRMWARE_VERSION) {
     USBSerial.println("New firmware available. Starting OTA update...");
-    gfx->setCursor(16, gfx->getCursorY());
+    gfx->setCursor(MARGIN_LEFT, gfx->getCursorY());
     gfx->println("Starting OTA update...");
 
     downloadAndApplyFirmware(latestVersion);
   } else {
     USBSerial.println("Device is up to date.");
-    gfx->setCursor(16, gfx->getCursorY());
+    gfx->setCursor(MARGIN_LEFT, gfx->getCursorY());
     gfx->println("Device is up to date.");
   }
 }
@@ -246,17 +248,18 @@ void setup()
   gfx->fillScreen(0x0000);   // BLACK
   gfx->setTextColor(0x001F); // BLUE in 565 RGB format
 
-  // center the text
-  gfx->setTextSize(4);
+  // center the version text
+  gfx->setTextSize(6);
   int16_t x1 = 0;
   int16_t y1 = 0;
   uint16_t w = 0;
   uint16_t h = 0;
   gfx->getTextBounds(FIRMWARE_VERSION, 0, 0, &x1, &y1, &w, &h);
-  gfx->setCursor((gfx->width() - w) / 2, (gfx->height() - h) / 2);
+  gfx->setCursor((gfx->width() - w) / 2, 0);
   gfx->println(FIRMWARE_VERSION);
-  gfx->setTextSize(3);
+  gfx->println();
 
+  gfx->setTextSize(3);
   gfx->setTextColor(0xFFFF); // WHITE in 565 RGB format
 
   // initialize button feature
@@ -274,7 +277,7 @@ void setup()
   // connect to Wi-Fi
   WiFiManager wm;
   USBSerial.println("autoConnect to WiFi...");
-  gfx->setCursor(16, gfx->getCursorY());
+  gfx->setCursor(MARGIN_LEFT, gfx->getCursorY());
   gfx->println("WiFi autoConnect...");
   bool result = wm.autoConnect("ESP32-C6-OTA", "YOUR_PASSWORD");
   if (!result) {
@@ -285,10 +288,10 @@ void setup()
   //if you get here you have connected to the WiFi    
   USBSerial.print("WiFi connected! IP address: ");
   USBSerial.println(WiFi.localIP());
-  gfx->setCursor(16, gfx->getCursorY());
+  gfx->setCursor(MARGIN_LEFT, gfx->getCursorY());
   gfx->println("WiFi connected");
 
-  gfx->setCursor(16, gfx->getCursorY());
+  gfx->setCursor(MARGIN_LEFT, gfx->getCursorY());
   gfx->print("IP: ");
   gfx->println(WiFi.localIP());
 

@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-python@v6
         with:
           architecture: "x64"
-          # python-version: "3.x"
+          python-version: "3.x"
       # https://docs.platformio.org/en/latest/core/history.html
       - name: Install PlatformIO core
         run: pip install --upgrade platformio
