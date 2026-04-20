@@ -18,8 +18,8 @@
 #include <HTTPClient.h>
 #include <Update.h>
 
-// bump also ./version.txt when changing the version
-#define FIRMWARE_VERSION "0.1.1"
+// The CI will bump the version in  ./version.txt when creating a new tag, e.g. v1.0.0
+#define FIRMWARE_VERSION "0.1.2"
 #define VERSION_URL "https://raw.githubusercontent.com/mcuw/esp32-c6-amoled-2.06-sdk/refs/heads/main/version.txt"
 #define FIRMWARE_URL "https://github.com/mcuw/esp32-c6-amoled-2.06-sdk/releases/download/v%s/firmware_esp32_c6_amoled_2_06_v%s.bin"
 
@@ -129,7 +129,7 @@ void downloadAndApplyFirmware(const String& latestVersion) {
 
   char url[256];
   snprintf(url, sizeof(url), FIRMWARE_URL, latestVersion.c_str(), latestVersion.c_str());
-  USBSerial.printf("URL: %s\n", url);
+  USBSerial.printf("Download URL: %s\n", url);
   http.begin(url);
 
   int httpCode = http.GET();
