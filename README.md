@@ -31,8 +31,8 @@ System
 - [ ] preferences/ NVS
 
 Energy management
-- [ ] WiFi 6 iTWT - omnipresent
-- [ ] low energy consumption - lifght sleep
+- [ ] WiFi 6 iTWT - omnipresent/ always online
+- [ ] low energy consumption - light sleep
 
 Sensor and actors
 - [ ] Watch - RTC PCF85063 chip sync with NTP
